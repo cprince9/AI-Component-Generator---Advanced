@@ -1,0 +1,15 @@
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.sp-text {
+   background: linear-gradient(to right, #a855f7, #d946ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.icon {
+  @apply w-10 h-10 rounded-xl bg-tertiary-bg border border-zinc-800 flex items-center justify-center hover:bg-zinc-800 transition-colors;
+}
