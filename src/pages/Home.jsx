@@ -42,7 +42,7 @@ const Home = () => {
     try {
       // 2. Initialize the model
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
       // 3. Construct the detailed prompt
       const fullPrompt = `
@@ -71,8 +71,11 @@ const Home = () => {
       toast.success('Component generated successfully!');
 
     } catch (error) {
-      console.error("API Error:", error);
-      toast.error("An error occurred while generating the code.");
+      console.error("FULL ERROR:", error);
+  console.error("MESSAGE:", error.message);
+  console.error("STACK:", error.stack);
+
+  toast.error(error.message);
     } finally {
       setLoading(false);
     }
