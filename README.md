@@ -197,6 +197,3 @@ npm run dev:all
 4. **Offline Resilience**: If MongoDB isn't running on your machine, notice the console log when starting the server—it will automatically switch to **Local File Database Mode**, storing your library cleanly in `server/data/*.json`.
 
 ---
-
-## 📝 License
-This project is open-source and available under the **MIT License**.
