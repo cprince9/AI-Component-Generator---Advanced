@@ -12,7 +12,7 @@ export default {
         'secondary-bg': '#141319',
         'tertiary-bg': '#17171C',
       },
-    },
+    } ,
   },
   plugins: [],
 }
