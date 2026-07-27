@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { FiUser, FiMail, FiLock, FiArrowRight, FiShield } from 'react-icons/fi';
+import { FiUser, FiMail, FiLock, FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import { ClipLoader } from 'react-spinners';
 
 const Register = () => {
@@ -20,63 +20,63 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#09090b] via-[#101017] to-[#09090b] relative overflow-hidden">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-gradient-to-b from-slate-100 via-purple-50/30 to-slate-100 dark:from-[#09090b] dark:via-[#101017] dark:to-[#09090b] relative overflow-hidden transition-colors duration-300">
       {/* Glow Effects */}
-      <div className="absolute -top-20 -right-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="w-full max-w-md bg-[#141319]/90 backdrop-blur-xl border border-gray-800/80 rounded-3xl p-8 shadow-2xl shadow-purple-950/20 z-10">
+      <div className="w-full max-w-md bg-white/90 dark:bg-[#141319]/90 backdrop-blur-xl border border-slate-200 dark:border-gray-800/80 rounded-3xl p-8 shadow-2xl dark:shadow-purple-950/20 z-10 transition-colors duration-300">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-indigo-600 to-purple-600 text-white text-xl font-bold mb-4 shadow-lg shadow-indigo-500/20">
-            ✨
+          <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white text-xl font-bold mb-4 shadow-lg shadow-purple-500/20">
+            ⚡
           </div>
-          <h2 className="text-2xl font-bold text-white tracking-wide">Create GenU Account</h2>
-          <p className="text-sm text-gray-400 mt-1">Start building and saving advanced AI UI components</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Create an Account</h2>
+          <p className="text-sm text-slate-500 dark:text-gray-400 mt-1">Join GenU to unlock your personal MongoDB UI Library</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Full Name</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2">Full Name</label>
             <div className="relative">
-              <span className="absolute left-4 top-3.5 text-gray-500"><FiUser size={18} /></span>
+              <span className="absolute left-4 top-3.5 text-slate-400 dark:text-gray-500"><FiUser size={18} /></span>
               <input
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="Alex Developer"
-                className="w-full bg-[#09090b] text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-gray-600"
+                placeholder="Alex Rivera"
+                className="w-full bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-slate-200 dark:border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-slate-400 dark:placeholder-gray-600"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2">Email Address</label>
             <div className="relative">
-              <span className="absolute left-4 top-3.5 text-gray-500"><FiMail size={18} /></span>
+              <span className="absolute left-4 top-3.5 text-slate-400 dark:text-gray-500"><FiMail size={18} /></span>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full bg-[#09090b] text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-gray-600"
+                className="w-full bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-slate-200 dark:border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-slate-400 dark:placeholder-gray-600"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Password</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2">Password</label>
             <div className="relative">
-              <span className="absolute left-4 top-3.5 text-gray-500"><FiLock size={18} /></span>
+              <span className="absolute left-4 top-3.5 text-slate-400 dark:text-gray-500"><FiLock size={18} /></span>
               <input
                 type="password"
                 required
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Minimum 6 characters"
-                className="w-full bg-[#09090b] text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-gray-600"
+                placeholder="•••••••• (min 6 chars)"
+                className="w-full bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-slate-200 dark:border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-slate-400 dark:placeholder-gray-600"
               />
             </div>
           </div>
@@ -84,24 +84,24 @@ const Register = () => {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-indigo-900/40 disabled:opacity-50 mt-2"
+            className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-purple-900/40 disabled:opacity-50 mt-2"
           >
-            {loading ? <ClipLoader color="white" size={18} /> : <><span>Create My Account</span> <FiArrowRight /></>}
+            {loading ? <ClipLoader color="white" size={18} /> : <><span>Create My Library</span> <FiArrowRight /></>}
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-gray-800/60 text-center">
-          <p className="text-sm text-gray-400">
+        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-gray-800/60 text-center">
+          <p className="text-sm text-slate-600 dark:text-gray-400">
             Already have an account?{' '}
-            <Link to="/login" className="text-purple-400 hover:text-purple-300 font-bold transition-colors">
-              Sign In
+            <Link to="/login" className="text-purple-600 dark:text-purple-400 hover:text-purple-500 dark:hover:text-purple-300 font-bold transition-colors">
+              Sign in
             </Link>
           </p>
         </div>
 
-        <div className="mt-6 bg-indigo-950/20 border border-indigo-500/20 rounded-xl p-3.5 flex items-center gap-2.5 text-xs text-indigo-300/80">
-          <FiShield className="text-indigo-400 shrink-0" size={16} />
-          <span>Your data is securely stored in MongoDB with Bcrypt password hashing.</span>
+        <div className="mt-6 bg-purple-50 dark:bg-purple-950/20 border border-purple-200 dark:border-purple-500/20 rounded-xl p-3.5 flex items-start gap-2.5 text-xs text-purple-800 dark:text-purple-300/80">
+          <FiCheckCircle className="text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" size={16} />
+          <span>No credit card required. Instantly save, modify, and export AI components.</span>
         </div>
       </div>
     </div>

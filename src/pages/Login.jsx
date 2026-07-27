@@ -19,47 +19,47 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-gradient-to-b from-[#09090b] via-[#101017] to-[#09090b] relative overflow-hidden">
+    <div className="min-h-[calc(100vh-80px)] flex items-center justify-center p-4 bg-gradient-to-b from-slate-100 via-purple-50/30 to-slate-100 dark:from-[#09090b] dark:via-[#101017] dark:to-[#09090b] relative overflow-hidden transition-colors duration-300">
       {/* Glow Effects */}
       <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="w-full max-w-md bg-[#141319]/90 backdrop-blur-xl border border-gray-800/80 rounded-3xl p-8 shadow-2xl shadow-purple-950/20 z-10">
+      <div className="w-full max-w-md bg-white/90 dark:bg-[#141319]/90 backdrop-blur-xl border border-slate-200 dark:border-gray-800/80 rounded-3xl p-8 shadow-2xl dark:shadow-purple-950/20 z-10 transition-colors duration-300">
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 text-white text-xl font-bold mb-4 shadow-lg shadow-purple-500/20">
             ⚡
           </div>
-          <h2 className="text-2xl font-bold text-white tracking-wide">Welcome Back</h2>
-          <p className="text-sm text-gray-400 mt-1">Log in to GenU to access your saved MongoDB library</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-wide">Welcome Back</h2>
+          <p className="text-sm text-slate-500 dark:text-gray-400 mt-1">Log in to GenU to access your saved MongoDB library</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Email Address</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2">Email Address</label>
             <div className="relative">
-              <span className="absolute left-4 top-3.5 text-gray-500"><FiMail size={18} /></span>
+              <span className="absolute left-4 top-3.5 text-slate-400 dark:text-gray-500"><FiMail size={18} /></span>
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
-                className="w-full bg-[#09090b] text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-gray-600"
+                className="w-full bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-slate-200 dark:border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-slate-400 dark:placeholder-gray-600"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Password</label>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-gray-400 mb-2">Password</label>
             <div className="relative">
-              <span className="absolute left-4 top-3.5 text-gray-500"><FiLock size={18} /></span>
+              <span className="absolute left-4 top-3.5 text-slate-400 dark:text-gray-500"><FiLock size={18} /></span>
               <input
                 type="password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full bg-[#09090b] text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-gray-600"
+                className="w-full bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-white text-sm rounded-xl pl-12 pr-4 py-3.5 border border-slate-200 dark:border-gray-800 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none transition-all placeholder-slate-400 dark:placeholder-gray-600"
               />
             </div>
           </div>
@@ -73,17 +73,17 @@ const Login = () => {
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-gray-800/60 text-center">
-          <p className="text-sm text-gray-400">
+        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-gray-800/60 text-center">
+          <p className="text-sm text-slate-600 dark:text-gray-400">
             Don't have an account?{' '}
-            <Link to="/register" className="text-purple-400 hover:text-purple-300 font-bold transition-colors">
+            <Link to="/register" className="text-purple-600 dark:text-purple-400 hover:text-purple-500 dark:hover:text-purple-300 font-bold transition-colors">
               Create an account
             </Link>
           </p>
         </div>
 
-        <div className="mt-6 bg-purple-950/20 border border-purple-500/20 rounded-xl p-3.5 flex items-start gap-2.5 text-xs text-purple-300/80">
-          <FiCheckCircle className="text-purple-400 shrink-0 mt-0.5" size={16} />
+        <div className="mt-6 bg-purple-50 dark:bg-purple-950/20 border border-purple-200 dark:border-purple-500/20 rounded-xl p-3.5 flex items-start gap-2.5 text-xs text-purple-800 dark:text-purple-300/80">
+          <FiCheckCircle className="text-purple-600 dark:text-purple-400 shrink-0 mt-0.5" size={16} />
           <span>Logging in lets you save components to MongoDB, view refinement history, and share your creations.</span>
         </div>
       </div>
